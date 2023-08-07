@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "projectTitle": "take the child to kindergarten",
+      "projectSize": "s",
+      "projectDue": "03-08-2023",
+      "tasks": ["get to the car", "enter the car", "drive to the kindergarten"]
+    },
+    {
+      "id": 2,
+      "projectTitle": "mail check",
+      "projectSize": "s",
+      "projectDue": "03-08-2023",
+      "tasks": ["check gmail", "process new emails"]
+    },
+    {
+      "id": 3,
+      "projectTitle": "clean the house",
+      "projectSize": "s",
+      "projectDue": "03-08-2023",
+      "tasks": ["vacuum", "clean up toys", "wash the floor"]
+    },
+    {
+      "id": 4,
+      "projectTitle": "payment of bills",
+      "projectSize": "s",
+      "projectDue": "03-08-2023",
+      "tasks": ["pay receipts", "compare indicators"]
+    }
+  ]
+}
