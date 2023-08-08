@@ -1,8 +1,7 @@
-import { useState } from "react";
 export const TaskCard = ({ project, index }) => {
   return (
-    <li key={project.id} onClick={() => setVisible((prev) => !prev)}>
-      {`P${++index}: `}
+    <li key={project.id}>
+      {`P${index + 1}: `}
       {project.projectTitle}
     </li>
   );
