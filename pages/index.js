@@ -1,7 +1,7 @@
 import data from "@/data/tasks.json";
 import { useState } from "react";
 import { TaskCard } from "@/components/TaskCard";
-export default function HomePage() {ç
+export default function HomePage() {
   const { projects } = data;
   return (
     <div className="App">
