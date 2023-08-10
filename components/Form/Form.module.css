@@ -1,0 +1,104 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 40px 10px;
+
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.h1 {
+  display: inline;
+  margin: 0;
+
+  font-size: 40px;
+}
+
+.navigate-btn {
+  background: black;
+  color: white;
+
+  padding: 12px;
+
+  border: 0;
+  border-radius: 8px;
+
+  flex-shrink: 0;
+
+  transition-duration: 300ms;
+}
+
+.navigate-btn:hover,
+.navigate-btn:focus {
+  opacity: 75%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+  max-width: 600px;
+
+  margin: auto;
+  padding: 20px;
+}
+
+.form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.select {
+  padding: 12px;
+
+  border: 0;
+  border-bottom: 2px solid black;
+}
+
+.select > option {
+  background: black;
+  color: white;
+}
+
+.error {
+  color: red;
+}
+
+.submit {
+  background: black;
+  color: white;
+
+  padding: 12px;
+
+  border: 0;
+  border-radius: 8px;
+
+  transition-duration: 300ms;
+}
+
+.submit:hover,
+.submit:focus {
+  opacity: 75%;
+}
+
+.input {
+  padding: 12px;
+
+  border: 0;
+  border-bottom: 2px solid black;
+}
+
+.inputarea {
+  padding: 12px;
+
+  border: 0;
+  border-bottom: 2px solid black;
+
+  max-width: 100%;
+}
