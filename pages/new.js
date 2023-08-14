@@ -1,3 +1,5 @@
+import {Form} from "@/components/Form";
+
 export default function New() {
-  return <h1>Add new Project</h1>;
+  return <Form />;
 }
