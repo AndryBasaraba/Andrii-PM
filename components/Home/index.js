@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { TaskCard } from "@/components/TaskCard";
 
+import { Header, Title, NewProjectBtn, ProjectsList } from "./Home.styled";
+
 export const Home = () => {
   const router = useRouter();
   const [projects, setProjects] = useState([]);
@@ -16,21 +18,21 @@ export const Home = () => {
 
   return (
     <>
-      <header>
-        <h1>Anrii PM</h1>
-        <button
+      <Header>
+        <Title>Andrii PM</Title>
+        <NewProjectBtn
           onClick={() => {
             router.push("/new");
           }}
         >
           +
-        </button>
-      </header>
-      <ul>
+        </NewProjectBtn>
+      </Header>
+      <ProjectsList>
         {projects.map((project, index) => (
           <TaskCard key={project.id} project={project} index={index} />
         ))}
-      </ul>
+      </ProjectsList>
     </>
   );
 };

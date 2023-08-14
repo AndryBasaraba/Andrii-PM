@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from "./Card.module.css";
+
+import { Tasks, Task, TaskListItem } from "./TaskCard.styled";
 
 export const TaskCard = ({ project, index }) => {
   const [visible, setVisible] = useState(false);
@@ -7,18 +8,18 @@ export const TaskCard = ({ project, index }) => {
     setVisible(!visible);
   };
   return (
-    <li onClick={projectClickHandler} className={styles.card}>
+    <TaskListItem onClick={projectClickHandler}>
       <b>
         {`P${index + 1}: `}
         {project.projectTitle}
       </b>
       {visible && (
-        <ul>
+        <Tasks>
           {project.tasks.map((task, index) => (
-            <li key={index}>{task}</li>
+            <Task key={index}>{task}</Task>
           ))}
-        </ul>
+        </Tasks>
       )}
-    </li>
+    </TaskListItem>
   );
 };

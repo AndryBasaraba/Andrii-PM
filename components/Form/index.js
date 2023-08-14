@@ -1,7 +1,19 @@
-import styles from "./Form.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import {
+  ProjectForm,
+  H1,
+  Header,
+  NavigationBtn,
+  Select,
+  Input,
+  SubmitButton,
+  Error,
+  Inputarea,
+  Option,
+} from "./Form.styled";
+import styled from "styled-components";
 
 export const Form = () => {
   const [formData, setFormData] = useState({
@@ -43,7 +55,7 @@ export const Form = () => {
     // Due by validation
     const dueDate = new Date(formData.dueBy);
     if (isNaN(dueDate) || dueDate < new Date()) {
-      newErrors.dueBy = "Due by must be a valid future date";
+      newErrors.dueBy = "Pick a valid future date";
       isValid = false;
     }
 
@@ -97,75 +109,66 @@ export const Form = () => {
 
   return (
     <>
-      <header className={styles.header}>
-        <h1 className={styles.h1}>Add new Project</h1>
-        <button
-          className={styles["navigate-btn"]}
-          onClick={() => router.push("/")}
-        >
-          Home
-        </button>
-      </header>
-      <form className={styles.form}>
+      <Header>
+        <H1>Add new Project</H1>
+        <NavigationBtn onClick={() => router.push("/")}>Home</NavigationBtn>
+      </Header>
+      <ProjectForm onSubmit={formSubmitHandler}>
         <label>
           Title
-          <input
-            className={styles.input}
+          <Input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleInputChange}
-          />
-          {errors.title && <span className={styles.error}>{errors.title}</span>}
+          ></Input>
+          {errors.title && <Error>{errors.title}</Error>}
         </label>
         <label>
           Size
-          <select
-            className={styles.select}
+          <Select
             name="size"
             value={formData.size}
             onChange={handleInputChange}
           >
-            <option value="" disabled>
-              Select Size
-            </option>
-            <option value="s">Small</option>
-            <option value="m">Medium</option>
-            <option value="l">Large</option>
-            <option value="xl">Extra Large</option>
-          </select>
-          {errors.size && <span className={styles.error}>{errors.size}</span>}
+            <Option>Select Size</Option>
+            <Option value="s">Small</Option>
+            <Option value="m">Medium</Option>
+            <Option value="l">Large</Option>
+            <Option value="xl">Extra Large</Option>
+          </Select>
+          {errors.size && <Error>{errors.size}</Error>}
         </label>
         <label>
           Due by
-          <input
-            className={styles.input}
+          <Input
             type="date"
             name="dueBy"
             value={formData.dueBy}
             onChange={handleInputChange}
-          />
-          {errors.dueBy && <span className={styles.error}>{errors.dueBy}</span>}
+          ></Input>
+          {errors.dueBy && <Error>{errors.dueBy}</Error>}
         </label>
         <label>
           Tasks
-          <textarea
-            className={styles.inputarea}
+          <Inputarea
             type="text"
             name="tasks"
             value={formData.tasks}
             onChange={handleInputChange}
           />
-          {errors.tasks && <span className={styles.error}>{errors.tasks}</span>}
+          {errors.tasks && <Error>{errors.tasks}</Error>}
         </label>
-        <button
-          type="submit"
-          className={styles.submit}
-          onClick={formSubmitHandler}
-        >
-          Submit
-        </button>
-      </form>
+        <SubmitButton type="submit">Submit</SubmitButton>
+      </ProjectForm>
     </>
   );
 };
+// const SubmitButton = styled.button`
+//   background: black;
+//   color: white;
+//   padding: 12px;
+//   border: 0;
+//   border-radius: 8px;
+//   transition-duration: 300ms;
+// `;
