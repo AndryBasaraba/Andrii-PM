@@ -29,4 +29,8 @@ export const NewProjectBtn = styled.button`
 
 export const ProjectsList = styled.ul`
   line-height: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction:column;
+  gap:20px; 
 `;
