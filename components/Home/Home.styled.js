@@ -5,7 +5,7 @@ export const Header = styled.header`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 40px 0 40px;
+  padding: 40px 10px;
   background-color: #000000;
   border-bottom: 1px solid gray;
 `;
@@ -13,6 +13,8 @@ export const Header = styled.header`
 export const Title = styled.h1`
   text-shadow: 3px 3px 3px #9370db, -1px 1px 1px #9370db;
   color: white;
+  font-size: 40px;
+  margin: 0;
 `;
 
 export const NewProjectBtn = styled.button`
@@ -28,5 +30,12 @@ export const NewProjectBtn = styled.button`
 `;
 
 export const ProjectsList = styled.ul`
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
   line-height: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
