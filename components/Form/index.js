@@ -164,11 +164,3 @@ export const Form = () => {
     </>
   );
 };
-// const SubmitButton = styled.button`
-//   background: black;
-//   color: white;
-//   padding: 12px;
-//   border: 0;
-//   border-radius: 8px;
-//   transition-duration: 300ms;
-// `;

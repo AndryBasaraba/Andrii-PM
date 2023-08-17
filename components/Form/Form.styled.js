@@ -41,10 +41,9 @@ export const Header = styled.header`
 
   padding: 40px 10px;
 
-  width: 100%;
-  max-width: 600px;
   margin: auto;
   background: black;
+  border-bottom: 1px solid gray;
 `;
 
 export const Select = styled.select`
