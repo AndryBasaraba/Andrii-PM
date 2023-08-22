@@ -13,7 +13,6 @@ import {
   Inputarea,
   Option,
 } from "./Form.styled";
-import styled from "styled-components";
 
 export const Form = () => {
   const [formData, setFormData] = useState({
@@ -79,6 +78,7 @@ export const Form = () => {
         projectSize: formData.size,
         projectDue: formData.dueBy,
         tasks: formData.tasks.split(",").map((task) => task.trim()),
+        status: false,
       };
 
       localStorage.setItem(
