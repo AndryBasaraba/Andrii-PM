@@ -71,6 +71,17 @@ export const Checkbox = styled.input`
   }
 `;
 
+export const EditButton = styled.button`
+  border: none;
+  background-color: transparent;
+  color: #ccc;
+  transition: all 300ms;
+  &:hover {
+    cursor: pointer;
+    color: #9370db;
+  }
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
