@@ -9,9 +9,13 @@ import {
   Checkbox,
   Wrapper,
   CrossedText,
+  EditButton,
 } from "./TaskCard.styled";
+import { useRouter } from "next/router";
 
+import Pensil from "public/pensil.svg";
 export const TaskCard = ({ project, index }) => {
+  const router = useRouter();
   const [visible, setVisible] = useState(false);
   const [checked, setChecked] = useState(false);
 
@@ -48,14 +52,19 @@ export const TaskCard = ({ project, index }) => {
           {`P${index + 1}: `}
           {projectTitle}
         </CrossedText>
-        <label>
-          <Checkbox
-            type="checkbox"
-            id={`checkbox-${id}`}
-            checked={checked}
-            onChange={onChangeCheckboxHandler}
-          />
-        </label>
+        <box>
+          <label>
+            <Checkbox
+              type="checkbox"
+              id={`checkbox-${id}`}
+              checked={checked}
+              onChange={onChangeCheckboxHandler}
+            />
+          </label>
+          <EditButton onClick={() => router.push(`/edit/${id}`)}>
+            <Pensil width={22} height={27} />
+          </EditButton>
+        </box>
       </Wrapper>
       {visible && (
         <Tasks>
