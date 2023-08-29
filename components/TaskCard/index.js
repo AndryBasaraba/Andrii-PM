@@ -13,7 +13,7 @@ import {
 } from "./TaskCard.styled";
 import { useRouter } from "next/router";
 
-import Pensil from "public/pensil.svg";
+import Pencil from "public/pencil.svg";
 export const TaskCard = ({ project, index }) => {
   const router = useRouter();
   const [visible, setVisible] = useState(false);
@@ -62,7 +62,7 @@ export const TaskCard = ({ project, index }) => {
             />
           </label>
           <EditButton onClick={() => router.push(`/edit/${id}`)}>
-            <Pensil width={22} height={27} />
+            <Pencil width={22} height={27} />
           </EditButton>
         </box>
       </Wrapper>
