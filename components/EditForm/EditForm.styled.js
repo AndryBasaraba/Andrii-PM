@@ -71,6 +71,8 @@ export const SubmitButton = styled.button`
 
   transition-duration: 300ms;
 
+  width: 100%;
+
   &:hover,
   :focus {
     opacity: 75%;
@@ -112,4 +114,10 @@ export const Inputarea = styled.textarea`
   border-bottom: 2px solid black;
 
   max-width: 100%;
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 `;

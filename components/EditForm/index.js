@@ -8,6 +8,7 @@ import {
   ProjectForm,
   Select,
   SubmitButton,
+  ButtonsWrapper,
 } from "./EditForm.styled";
 
 export const EditForm = ({ filteredProject }) => {
@@ -107,6 +108,17 @@ export const EditForm = ({ filteredProject }) => {
     }));
   };
 
+  const handleDelete = () => {
+    const updatedProjects = projectsData.filter(
+      (project) => project.id !== filteredProject.id
+    );
+
+    localStorage.setItem("projectsData", JSON.stringify(updatedProjects));
+    setProjectsData(updatedProjects);
+
+    router.push("/");
+  };
+
   return (
     <>
       <ProjectForm onSubmit={formSubmitHandler}>
@@ -155,7 +167,12 @@ export const EditForm = ({ filteredProject }) => {
           />
           {errors.tasks && <Error>{errors.tasks}</Error>}
         </label>
-        <SubmitButton type="submit">Submit</SubmitButton>
+        <ButtonsWrapper>
+          <SubmitButton type="submit">Save</SubmitButton>
+          <SubmitButton type="button" onClick={handleDelete}>
+            Delete
+          </SubmitButton>
+        </ButtonsWrapper>
       </ProjectForm>
     </>
   );
